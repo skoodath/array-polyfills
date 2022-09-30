@@ -45,6 +45,19 @@ let filterPolyfill = ArrayFilterPolyfill(myArray, greaterThanTwo); // [3, 4, 5, 
 ### Array.prototype.reduce
 
 ```JavaScript
+
+export const ArrayReducePolyfill = (arr, callback, initialValue) => {
+  let accumulator = initialValue;
+  for (let i = 0; i < arr.length; i++) {
+    if (accumulator === undefined) {
+      accumulator = arr[i];
+    } else {
+      accumulator = callback(accumulator, arr[i], i, arr);
+    }
+  }
+  return accumulator;
+};
+
 const frequency = (acc, curr) => ((acc[curr] = (acc[curr] || 0) + 1), acc); // Sample callback 1
 const sum = (acc, curr) => acc + curr; // Sample callback 2
 
