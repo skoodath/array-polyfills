@@ -32,13 +32,32 @@ let reducePolyfill = ArrayReducePolyfill(myArray, frequency, {}); // {1: 1, 2: 1
 
 /* Array At */
 
+export const ArrayAtPolyFill = (arr, index) => {
+  let { length } = arr;
+  if (index < 0) index += length;
+  if (index < 0 || index >= length) return undefined;
+  return arr[index];
+};
+
 const atBuiltIn = myArray.at(-3); // 6
 const atPolyfill = ArrayAtPolyFill(myArray, -7); // 2
 
 /* Array Concat */
 
-const concatBuiltIn = myArray.concat([11, 12, 13]); // [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13]
-const concatPolyfill = ArrayConcatPolyfill(myArray, [11, 12, 13]); // [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13]
+export const ArrayConcatPolyfill = (...args) => {
+  let result = [];
+  for (let a of args) {
+    if (Array.isArray(a)) {
+      result.push(...a);
+    } else {
+      result.push(a);
+    }
+  }
+  return result;
+};
+
+const concatBuiltIn = myArray.concat([11, 12, 13], "John Doe"); // [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, "John Doe"]
+const concatPolyfill = ArrayConcatPolyfill(myArray, [11, 12, 13], "John Doe"); // [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, "John Doe"]
 
 /* Array Every */
 
