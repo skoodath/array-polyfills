@@ -1,4 +1,4 @@
-export const ArrayReducePolyfill = (arr, callback, initialValue) => {
+const ArrayReducePolyfill = (arr, callback, initialValue) => {
   let accumulator = initialValue;
   for (let i = 0; i < arr.length; i++) {
     if (accumulator === undefined) {
@@ -9,3 +9,5 @@ export const ArrayReducePolyfill = (arr, callback, initialValue) => {
   }
   return accumulator;
 };
+
+module.exports = ArrayReducePolyfill;

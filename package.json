@@ -1,0 +1,23 @@
+{
+  "name": "array-polyfills",
+  "version": "1.0.0",
+  "description": "A list of array methods and its polyfills with some common examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skoodath/array-polyfills.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skoodath/array-polyfills/issues"
+  },
+  "homepage": "https://github.com/skoodath/array-polyfills#readme",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
+}

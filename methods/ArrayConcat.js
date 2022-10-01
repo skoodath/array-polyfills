@@ -1,4 +1,4 @@
-export const ArrayConcatPolyfill = (...args) => {
+const ArrayConcatPolyfill = (...args) => {
   let result = [];
   for (let a of args) {
     if (Array.isArray(a)) {
@@ -9,3 +9,5 @@ export const ArrayConcatPolyfill = (...args) => {
   }
   return result;
 };
+
+module.exports = ArrayConcatPolyfill;
